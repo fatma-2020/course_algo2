@@ -26,7 +26,6 @@ BEGIN
        END_IF
    END_FOR
    //add distinct elements in set1 to the sum (sum_dis)
-   i:=0;
    FOR i FROM 0 TO set1.length STEP 1 DO
        IF (htab.get(set1[i])=1) THEN
           sum_dis := sum_dis+set1[i];           

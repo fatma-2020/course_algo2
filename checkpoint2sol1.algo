@@ -8,7 +8,6 @@ VAR
 BEGIN
    set1:= {12, 13, 6, 10};
    set2:= {13, 10, 16, 15};
-   i:=0
    FOR i FROM 0 TO set1.length STEP 1 DO
         j:=0;
         WHILE (set1[i]<>set2[j] and j<set2[j].length) DO
@@ -23,7 +22,6 @@ BEGIN
             sum_common:=sum_common +set1[i]*2
         END_IF
    END_FOR
-   i:=0;
    FOR i FROM 0 TO set2.length STEP 1 DO
         j:=0;
         WHILE (set2[i]<>set1[j] and j<set1[j].length) DO
