@@ -1,0 +1,33 @@
+ALGORITHM algorithm_name
+VAR
+   htab : HASH_TABLE<INTEGER,INTEGER>;
+   set1 : ARRAY_OF INTEGER[4];
+   set2 : ARRAY_OF INTEGER[4];
+   sum_dis : INTEGER:=0;
+   sum_common : INTEGER:=0;
+   i,j: INTEGER :=0;
+BEGIN
+   set1:= {12, 13, 6, 10};
+   set2:= {13, 10, 16, 15};
+   //hash table filling 
+   FOR i FROM 0 TO set1.length STEP 1 DO
+       htab.insert(set1[i],1);
+   END_FOR
+   FOR j FROM 0 TO set2.length STEP 1 DO
+       IF (htab.lookup(set2[j])) THEN
+           htab.insert(set2[j],2);
+
+           //sum of common/overlapping elements
+           sum_common := sum_common+set2[j]*2;
+        ELSE {
+            htab.insert(set2[i],1);
+            //sum of distinct elements in set2
+            sum_dis:=sum_dis+set2[i];}
+       END_IF
+   END_FOR
+   //add distinct elements in set1 to the sum (sum_dis)
+   i:=0;
+   FOR i FROM 0 TO set1.length STEP 1 DO
+       IF (htab.get(set1[i])=1) THEN
+          sum_dis := sum_dis+set1[i];           
+END
