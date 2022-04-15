@@ -34,4 +34,7 @@ BEGIN
             sum_common:=sum_common +set2[i]*2
         END_IF 
     END_FOR
+    
+    Write('Sum of overlapping elements: ', sum_common);
+    Write('Sum of all distinct elements', sum_dis);
 END
