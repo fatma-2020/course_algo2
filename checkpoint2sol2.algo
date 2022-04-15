@@ -1,11 +1,11 @@
-ALGORITHM algorithm_name
+ALGORITHM sol_with_hashtab
 VAR
    htab : HASH_TABLE<INTEGER,INTEGER>;
    set1 : ARRAY_OF INTEGER[4];
    set2 : ARRAY_OF INTEGER[4];
    sum_dis : INTEGER:=0;
    sum_common : INTEGER:=0;
-   i,j: INTEGER :=0;
+   i,j: INTEGER;
 BEGIN
    set1:= {12, 13, 6, 10};
    set2:= {13, 10, 16, 15};
@@ -16,7 +16,6 @@ BEGIN
    FOR j FROM 0 TO set2.length STEP 1 DO
        IF (htab.lookup(set2[j])) THEN
            htab.insert(set2[j],2);
-
            //sum of common/overlapping elements
            sum_common := sum_common+set2[j]*2;
         ELSE {

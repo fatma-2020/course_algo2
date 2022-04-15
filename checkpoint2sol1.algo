@@ -1,9 +1,9 @@
-ALGORITHM algorithm_name
+ALGORITHM sol_with_array
 VAR
-    sum_dis : INTEGER:=0;
-    sum_common : INTEGER:=0;
     set1 : ARRAY_OF INTEGER[4];
     set2 : ARRAY_OF INTEGER[4];
+    sum_dis : INTEGER:=0;
+    sum_common : INTEGER:=0;
     i,j : INTEGER;
 BEGIN
    set1:= {12, 13, 6, 10};
